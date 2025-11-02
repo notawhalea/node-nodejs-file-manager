@@ -1,0 +1,24 @@
+{
+  "name": "nodejs-file-manager",
+  "version": "1.0.0",
+  "description": "This is homework for creating File Manager created by Mikita Pelikh",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/notawhalea/node-nodejs-file-manager.git"
+  },
+  "keywords": [
+    "nodejs",
+    "cli"
+  ],
+  "author": "notawhalea",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/notawhalea/node-nodejs-file-manager/issues"
+  },
+  "homepage": "https://github.com/notawhalea/node-nodejs-file-manager#readme"
+}
