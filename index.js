@@ -9,6 +9,8 @@ import { handleCd } from "./src/navigation/cd.js";
 import { handleLs } from "./src/navigation/ls.js";
 import { invalidInput, operationFailed } from "./src/errors/errors.js";
 import { handleOs } from "./src/os/os.js";
+import { handleCompress } from "./src/zlib/compress.js";
+import { handleDecompress } from "./src/zlib/decompress.js";
 
 const username = getUsername();
 const initialCwd = homedir();
@@ -70,6 +72,14 @@ const handleInput = async (line) => {
 
         case 'os':
             handleOs(args);
+            break;
+
+        case 'compress':
+            await handleCompress(args, currentCwd);
+            break;
+
+        case 'decompress':
+            await handleDecompress(args, currentCwd);
             break;
 
         default:
