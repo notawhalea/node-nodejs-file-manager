@@ -14,6 +14,10 @@ import { handleDecompress } from "./src/zlib/decompress.js";
 import { handleCat } from "./src/fs/cat.js";
 import { handleMkdir } from "./src/fs/mkdir.js";
 import { handleAdd } from "./src/fs/add.js";
+import { handleRn } from "./src/fs/rn.js";
+import { handleCp } from "./src/fs/cp.js";
+import { handleMv } from "./src/fs/mv.js";
+import { handleRm } from "./src/fs/rm.js";
 
 const username = getUsername();
 const initialCwd = homedir();
@@ -79,6 +83,22 @@ const handleInput = async (line) => {
 
         case 'mkdir':
             await handleMkdir(args, currentCwd);
+            break;
+
+        case 'rn':
+            await handleRn(args, currentCwd);
+            break;
+
+        case 'cp':
+            await handleCp(args, currentCwd);
+            break;
+
+        case 'mv':
+            await handleMv(args, currentCwd);
+            break;
+
+        case 'rm':
+            await handleRm(args, currentCwd);
             break;
 
         case 'hash':
