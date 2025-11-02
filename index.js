@@ -11,6 +11,9 @@ import { invalidInput, operationFailed } from "./src/errors/errors.js";
 import { handleOs } from "./src/os/os.js";
 import { handleCompress } from "./src/zlib/compress.js";
 import { handleDecompress } from "./src/zlib/decompress.js";
+import { handleCat } from "./src/fs/cat.js";
+import { handleMkdir } from "./src/fs/mkdir.js";
+import { handleAdd } from "./src/fs/add.js";
 
 const username = getUsername();
 const initialCwd = homedir();
@@ -64,6 +67,18 @@ const handleInput = async (line) => {
         case 'ls':
             if (args.length !== 0) invalidInput();
             else await handleLs(currentCwd);
+            break;
+
+        case 'add':
+            await handleAdd(args, currentCwd);
+            break;
+
+        case 'cat':
+            await handleCat(args, currentCwd);
+            break;
+
+        case 'mkdir':
+            await handleMkdir(args, currentCwd);
             break;
 
         case 'hash':
